@@ -1,24 +1,14 @@
+import { Post } from "@/components/BlogComponents/Post";
+import { getPostById } from "@/services/getPosts";
+
 type Props = {
   params: {
     id: string;
   };
 };
 
-async function getData(id: string) {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`,
-    {
-      next: {
-        revalidate: 60,
-      },
-    }
-  );
-
-  return response.json();
-}
-
 export async function generateMetadata({ params }: Props) {
-  const post = await getData(params.id);
+  const post = await getPostById(params.id);
 
   return {
     title: `${post.title} | NextJS`,
@@ -26,13 +16,10 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function BlogPost({ params }: Props) {
-  const post = await getData(params.id);
-
   return (
     <>
       <h1>Blog post page #{params.id}</h1>
-      <h2>{post.title}</h2>
-      <p>{post.body}</p>
+      <Post id={params.id} />
     </>
   );
 }
