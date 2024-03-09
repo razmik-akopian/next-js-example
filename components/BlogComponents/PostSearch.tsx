@@ -14,7 +14,7 @@ const PostSearch = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="stack">
       <input
         type="search"
         placeholder="Search posts... "

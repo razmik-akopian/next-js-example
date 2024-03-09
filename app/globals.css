@@ -54,6 +54,7 @@ main a {
   text-decoration: none;
   color: var(--color-bg);
 }
+
 main a:hover {
   text-decoration: underline;
 }
@@ -68,18 +69,30 @@ form {
   justify-content: center;
 }
 
-form button {
+button {
   background-color: var(--color-active);
   cursor: pointer;
   color: white;
   border: none;
   border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
 }
 
-input[type="search"] {
+input {
   padding: 0.5rem;
-  margin-right: 0.5rem;
   border-radius: 0.25rem;
   outline: none;
   border: 1px solid black;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 1rem;
 }
