@@ -18,10 +18,10 @@ export default async function BlogPost({ params }: Props) {
   const post = await getPostById(params.id);
 
   return (
-    <>
+    <section className="centered-row">
       <h1>Blog post page #{params.id}</h1>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
-    </>
+    </section>
   );
 }

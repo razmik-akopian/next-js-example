@@ -10,6 +10,10 @@ export default function Blog() {
   return (
     <>
       <h1>Blog page</h1>
+      <h3 className="centered-title">
+        Here example of fetching posts from server (in this case - JSON
+        Placeholder)
+      </h3>
       <PostSearch />
       <Posts />
     </>

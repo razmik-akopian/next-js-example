@@ -1,11 +1,12 @@
-import { authConfig } from "@/configs/auth";
+import Image from "next/image";
 import { getServerSession } from "next-auth/next";
+import { authConfig } from "@/configs/auth";
 
 export async function generateMetadata() {
   const session = await getServerSession(authConfig);
 
   return {
-    title: `${session?.user?.name} | NextJS`,
+    title: `${session?.user?.name ?? "User"} | NextJS`,
   };
 }
 
@@ -13,10 +14,15 @@ export default async function Profile() {
   const session = await getServerSession(authConfig);
 
   return (
-    <div>
-      <h1>Profile of {session?.user?.name}</h1>
+    <div className="centered-row">
+      <h1>Hello, {session?.user?.name ?? "User"}!</h1>
       {session?.user?.image && (
-        <img src={session.user.image} alt="Profile picture" />
+        <Image
+          src={session?.user?.image}
+          alt="Profile picture"
+          width={120}
+          height={120}
+        />
       )}
     </div>
   );

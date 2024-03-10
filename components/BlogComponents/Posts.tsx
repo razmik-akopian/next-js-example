@@ -7,7 +7,7 @@ const Posts = () => {
   const { data: posts, isLoading } = useSWR("posts", getAllPosts);
 
   if (isLoading) {
-    return <h3>Loading...</h3>;
+    return <h3 className="centered-title">Loading...</h3>;
   }
 
   if (!posts || !posts.length) {
@@ -15,8 +15,8 @@ const Posts = () => {
   }
 
   return (
-    <ul>
-      {posts.map((post: any) => (
+    <ul className="centered-row">
+      {posts.map((post) => (
         <li key={post.id}>
           <Link href={`/blog/${post.id}`}>{post.title}</Link>
         </li>
