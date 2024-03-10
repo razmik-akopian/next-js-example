@@ -1,5 +1,5 @@
-const TheFooter = () => {
+const Footer = () => {
   return <footer className="container">Created by &copy;Razmik Akopian</footer>;
 };
 
-export default TheFooter;
+export { Footer };

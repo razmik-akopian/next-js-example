@@ -6,7 +6,7 @@ const navItems = [
   { label: "About", href: "/about" },
 ];
 
-const TheHeader = () => {
+const Header = () => {
   return (
     <header>
       <Navigation navLinks={navItems} />
@@ -14,4 +14,4 @@ const TheHeader = () => {
   );
 };
 
-export { TheHeader };
+export { Header };

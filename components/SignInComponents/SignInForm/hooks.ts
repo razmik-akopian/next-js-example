@@ -1,9 +1,8 @@
-"use client";
 import { signIn } from "next-auth/react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 
-const SignInForm = () => {
+const useSignInFormData = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [error, setError] = useState<string | null>(null);
@@ -27,17 +26,7 @@ const SignInForm = () => {
     }
   };
 
-  return (
-    <>
-      <form onSubmit={handleSubmit} className="stack">
-        <input type="text" placeholder="Email" name="email" />
-        <input type="password" placeholder="Password" name="password" />
-        <button type="submit">Sign In</button>
-
-        {error && <p>{error}</p>}
-      </form>
-    </>
-  );
+  return { handleSubmit, error };
 };
 
-export { SignInForm };
+export { useSignInFormData };

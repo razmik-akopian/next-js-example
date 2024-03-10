@@ -10,7 +10,7 @@ const Posts = () => {
     return <h3>Loading...</h3>;
   }
 
-  if (!posts.length) {
+  if (!posts || !posts.length) {
     return <h3>No posts found</h3>;
   }
 

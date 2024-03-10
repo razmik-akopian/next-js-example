@@ -1,6 +1,6 @@
-import { TheHeader } from "@/components/TheHeader";
+import { Header } from "@/components/Header";
 import { Providers } from "@/components/Providers";
-import TheFooter from "@/components/TheFooter";
+import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -18,9 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <TheHeader />
+          <Header />
           <main>{children}</main>
-          <TheFooter />
+          <Footer />
         </Providers>
       </body>
     </html>

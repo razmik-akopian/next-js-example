@@ -1,5 +1,5 @@
-import { GoogleButton } from "@/components/SignIn/GoogleButton";
-import { SignInForm } from "@/components/SignIn/SignInForm";
+import { GoogleButton } from "@/components/SignInComponents/GoogleButton";
+import { SignInForm } from "@/components/SignInComponents/SignInForm/";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

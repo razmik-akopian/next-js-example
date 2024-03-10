@@ -1,4 +1,3 @@
-import { Post } from "@/components/BlogComponents/Post";
 import { getPostById } from "@/services/getPosts";
 
 type Props = {
@@ -16,10 +15,13 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function BlogPost({ params }: Props) {
+  const post = await getPostById(params.id);
+
   return (
     <>
       <h1>Blog post page #{params.id}</h1>
-      <Post id={params.id} />
+      <h2>{post.title}</h2>
+      <p>{post.body}</p>
     </>
   );
 }
