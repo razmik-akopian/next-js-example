@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="centered-row">
+    <section className="centered-rows">
       <h1>About us</h1>
       <ul>
         <li>

@@ -15,7 +15,7 @@ const Posts = () => {
   }
 
   return (
-    <ul className="centered-row">
+    <ul>
       {posts.map((post) => (
         <li key={post.id}>
           <Link href={`/blog/${post.id}`}>{post.title}</Link>

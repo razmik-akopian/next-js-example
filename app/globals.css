@@ -107,7 +107,7 @@ input {
   gap: 1rem;
 }
 
-.centered-row {
+.centered-rows {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,10 +119,6 @@ input {
   > ul {
     padding: 0;
     margin: 0;
-
-    > li {
-      list-style: none;
-    }
   }
 }
 

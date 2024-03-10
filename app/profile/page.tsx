@@ -14,7 +14,7 @@ export default async function Profile() {
   const session = await getServerSession(authConfig);
 
   return (
-    <div className="centered-row">
+    <div className="centered-rows">
       <h1>Hello, {session?.user?.name ?? "User"}!</h1>
       {session?.user?.image && (
         <Image
